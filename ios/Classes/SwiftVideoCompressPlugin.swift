@@ -135,9 +135,6 @@ public class SwiftVideoCompressPlugin: NSObject, FlutterPlugin {
     
     @objc private func updateProgress(timer:Timer) {
         let asset = timer.userInfo as! AVAssetExportSession
-        if(stopCommand) {
-            channel.invokeMethod("updateProgress", arguments: "\(String(describing: 100))")
-        }
         if(!stopCommand) {
             channel.invokeMethod("updateProgress", arguments: "\(String(describing: asset.progress * 100))")
         }
@@ -251,6 +248,7 @@ public class SwiftVideoCompressPlugin: NSObject, FlutterPlugin {
             var json = self.getMediaInfoJson(Utility.excludeEncoding(compressionUrl.path))
             json["isCancel"] = false
             let jsonString = Utility.keyValueToJson(json)
+            channel.invokeMethod("updateProgress", arguments: "\(String(describing: 100))")
             result(jsonString)
         })
         self.exporter = exporter
