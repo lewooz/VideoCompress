@@ -7,5 +7,6 @@ enum VideoQuality {
   Res960x540Quality,
   Res1280x720Quality,
   Res1920x1080Quality,
-  HEVCHighestQuality
+  HEVCHighestQuality,
+  HEVC1920x1080,
 }

@@ -127,6 +127,9 @@ class VideoCompressPlugin : MethodCallHandler, FlutterPlugin {
                     8 -> {
                         videoTrackStrategy = DefaultVideoStrategy.atMost(1080, 1920).build()
                     }
+                    9 -> {
+                        videoTrackStrategy = DefaultVideoStrategy.atMost(1080, 1920).build()
+                    }
                 }
 
                 audioTrackStrategy = if (includeAudio) {
