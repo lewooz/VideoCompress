@@ -9,8 +9,4 @@ enum VideoQuality {
   Res1920x1080Quality,
   HEVCHighestQuality,
   HEVC1920x1080,
-  M4VCellular,
-  M4VWiFi,
-  M4V480p,
-  M4V720p
 }
